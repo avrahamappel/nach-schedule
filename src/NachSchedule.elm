@@ -1,6 +1,5 @@
 module NachSchedule exposing (makeSchedule)
 
-import Array
 import List
 import List.Extra
 
@@ -45,15 +44,16 @@ fetchLinesFromSef r =
     Debug.todo "Get all lines in paragraph where this reference is found"
 
 
-pToLines : Date -> List Line
+pToLines : Date -> ( Date, List Line )
 pToLines d =
     fetchDayfromSef d
         |> fetchReferencesFromSef
         |> List.map fetchLinesFromSef
         |> List.foldl List.append []
+        |> Tuple.pair d
 
 
-psInRange : Int -> Int -> List (List Line)
+psInRange : Int -> Int -> List ( Date, List Line )
 psInRange s e =
     List.range s e
         |> List.map pToLines
@@ -83,58 +83,9 @@ makeSchedule start end =
         linesPerDayMod =
             modBy (List.length days) (List.length allLines)
 
-        -- get lines in that range referenced by the base study program
-        array =
+        {- get lines in that range referenced by the base study program -}
+        references =
             List.map pToLines days
                 |> List.Extra.uniqueBy Tuple.second
-                |> Array.fromList
-
-        -- spread out lines across days
-        daysWithFannedLines =
-            List.foldr ( Array.reverse array, [] )
-                (\( reversed, acc ) ( x, i ) ->
-                    if (Array.first reversed).date >= x.date then
-                        let
-                            count =
-                                if modBy linesPerDayMod i == 0 then
-                                    linesPerDay + 1
-
-                                else
-                                    linesPerDay
-
-                            ( toGo, toStay ) =
-                                Array.splitAt count reversed
-                        in
-                        ( toStay, ( x.date, Just toGo ) :: acc )
-
-                    else
-                        ( reversed, ( x.date, Nothing ) :: acc )
-                )
-
-        -- find lines not in referencedLines
-        unreferencedLines =
-            let
-                flattened =
-                    Array.foldl Array.empty Array.append array
-            in
-            allLines
-                |> List.filter
-                    (\x ->
-                        not
-                            (Array.contains x flattened)
-                    )
-
-        -- fill gaps in days with lines from unreferenced
-        combinedDays =
-            daysWithFannedLines
-                |> List.foldl ( unreferencedLines, [] )
-                    (\( unref, acc ) x ->
-                        case x.lines of
-                            Just ls ->
-                                ( unref, x.date, ls )
-
-                            Nothing ->
-                                ( toStay, x.date, toGo )
-                    )
     in
-    combinedDays
+    references

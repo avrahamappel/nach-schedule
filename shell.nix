@@ -2,11 +2,7 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    # cargo
-    # clippy
     elmPackages.elm
-    # rustc
-    # rustfmt
+    elmPackages.elm-test
   ];
-  RUST_SRC_DIR = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
 }

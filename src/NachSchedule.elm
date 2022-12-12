@@ -1,4 +1,4 @@
-module NachSchedule exposing (makeSchedule)
+module NachSchedule exposing (Line, makeSchedule)
 
 import List
 import List.Extra

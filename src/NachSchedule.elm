@@ -1,11 +1,11 @@
-module NachSchedule exposing (Line, makeSchedule)
+module NachSchedule exposing (Line, makeSchedule, psInRange)
 
 import List
 import List.Extra
 
 
-type Book
-    = Book
+type alias Book =
+    String
 
 
 type alias Date =
@@ -20,8 +20,8 @@ type Ref
     = Ref
 
 
-type Line
-    = Line
+type alias Line =
+    { book : Book, chapter : Int, verse : Int }
 
 
 rangeOfDays : Int -> Int -> List Date
@@ -53,7 +53,7 @@ pToLines d =
         |> Tuple.pair d
 
 
-psInRange : Int -> Int -> List ( Date, List Line )
+psInRange : Date -> Date -> List ( Date, List Line )
 psInRange s e =
     List.range s e
         |> List.map pToLines

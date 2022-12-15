@@ -35,12 +35,12 @@ suite =
                             , { book = "Joshua", chapter = 1, verse = 18 }
                             , { book = "Joshua", chapter = 2, verse = 1 }
                             , { book = "Joshua", chapter = 2, verse = 2 }
+                            , { book = "Joshua", chapter = 2, verse = 3 }
+                            , { book = "Joshua", chapter = 2, verse = 4 }
                             ]
                           )
                         , ( 2
-                          , [ { book = "Joshua", chapter = 2, verse = 3 }
-                            , { book = "Joshua", chapter = 2, verse = 4 }
-                            , { book = "Joshua", chapter = 2, verse = 5 }
+                          , [ { book = "Joshua", chapter = 2, verse = 5 }
                             , { book = "Joshua", chapter = 2, verse = 6 }
                             , { book = "Joshua", chapter = 2, verse = 7 }
                             , { book = "Joshua", chapter = 2, verse = 8 }
@@ -58,14 +58,14 @@ suite =
                             , { book = "Joshua", chapter = 2, verse = 20 }
                             , { book = "Joshua", chapter = 2, verse = 21 }
                             , { book = "Joshua", chapter = 2, verse = 22 }
-                            ]
-                          )
-                        , ( 3
-                          , [ { book = "Joshua", chapter = 2, verse = 23 }
+                            , { book = "Joshua", chapter = 2, verse = 23 }
                             , { book = "joshua", chapter = 2, verse = 24 }
                             , { book = "joshua", chapter = 3, verse = 1 }
                             , { book = "joshua", chapter = 3, verse = 2 }
-                            , { book = "joshua", chapter = 3, verse = 3 }
+                            ]
+                          )
+                        , ( 3
+                          , [ { book = "joshua", chapter = 3, verse = 3 }
                             , { book = "joshua", chapter = 3, verse = 4 }
                             , { book = "joshua", chapter = 3, verse = 5 }
                             , { book = "joshua", chapter = 3, verse = 6 }
@@ -81,16 +81,16 @@ suite =
                             , { book = "joshua", chapter = 3, verse = 16 }
                             , { book = "joshua", chapter = 3, verse = 17 }
                             , { book = "joshua", chapter = 4, verse = 1 }
-                            ]
-                          )
-                        , ( 4
-                          , [ { book = "Joshua", chapter = 4, verse = 2 }
+                            , { book = "Joshua", chapter = 4, verse = 2 }
                             , { book = "joshua", chapter = 4, verse = 3 }
                             , { book = "joshua", chapter = 4, verse = 4 }
                             , { book = "joshua", chapter = 4, verse = 5 }
                             , { book = "joshua", chapter = 4, verse = 6 }
                             , { book = "joshua", chapter = 4, verse = 7 }
-                            , { book = "joshua", chapter = 4, verse = 8 }
+                            ]
+                          )
+                        , ( 4
+                          , [ { book = "joshua", chapter = 4, verse = 8 }
                             , { book = "joshua", chapter = 4, verse = 9 }
                             , { book = "joshua", chapter = 4, verse = 10 }
                             , { book = "joshua", chapter = 4, verse = 11 }
@@ -104,10 +104,7 @@ suite =
                             , { book = "joshua", chapter = 4, verse = 19 }
                             , { book = "joshua", chapter = 4, verse = 20 }
                             , { book = "joshua", chapter = 4, verse = 21 }
-                            ]
-                          )
-                        , ( 5
-                          , [ { book = "Joshua", chapter = 4, verse = 22 }
+                            , { book = "Joshua", chapter = 4, verse = 22 }
                             , { book = "Joshua", chapter = 4, verse = 23 }
                             , { book = "Joshua", chapter = 4, verse = 24 }
                             , { book = "Joshua", chapter = 5, verse = 1 }
@@ -115,7 +112,10 @@ suite =
                             , { book = "Joshua", chapter = 5, verse = 3 }
                             , { book = "Joshua", chapter = 5, verse = 4 }
                             , { book = "Joshua", chapter = 5, verse = 5 }
-                            , { book = "Joshua", chapter = 5, verse = 6 }
+                            ]
+                          )
+                        , ( 5
+                          , [ { book = "Joshua", chapter = 5, verse = 6 }
                             , { book = "Joshua", chapter = 5, verse = 7 }
                             , { book = "Joshua", chapter = 5, verse = 8 }
                             , { book = "Joshua", chapter = 5, verse = 9 }
@@ -127,10 +127,7 @@ suite =
                             , { book = "Joshua", chapter = 5, verse = 15 }
                             , { book = "Joshua", chapter = 6, verse = 1 }
                             , { book = "Joshua", chapter = 6, verse = 2 }
-                            ]
-                          )
-                        , ( 6
-                          , [ { book = "Joshua", chapter = 6, verse = 3 }
+                            , { book = "Joshua", chapter = 6, verse = 3 }
                             , { book = "Joshua", chapter = 6, verse = 4 }
                             , { book = "Joshua", chapter = 6, verse = 5 }
                             , { book = "Joshua", chapter = 6, verse = 6 }
@@ -140,7 +137,10 @@ suite =
                             , { book = "Joshua", chapter = 6, verse = 10 }
                             , { book = "Joshua", chapter = 6, verse = 11 }
                             , { book = "Joshua", chapter = 6, verse = 12 }
-                            , { book = "Joshua", chapter = 6, verse = 13 }
+                            ]
+                          )
+                        , ( 6
+                          , [ { book = "Joshua", chapter = 6, verse = 13 }
                             , { book = "Joshua", chapter = 6, verse = 14 }
                             , { book = "Joshua", chapter = 6, verse = 15 }
                             , { book = "Joshua", chapter = 6, verse = 16 }
@@ -150,10 +150,7 @@ suite =
                             , { book = "Joshua", chapter = 6, verse = 20 }
                             , { book = "Joshua", chapter = 6, verse = 21 }
                             , { book = "Joshua", chapter = 6, verse = 22 }
-                            ]
-                          )
-                        , ( 7
-                          , [ { book = "Joshua", chapter = 6, verse = 23 }
+                            , { book = "Joshua", chapter = 6, verse = 23 }
                             , { book = "Joshua", chapter = 6, verse = 24 }
                             , { book = "Joshua", chapter = 6, verse = 25 }
                             , { book = "Joshua", chapter = 6, verse = 26 }
@@ -165,7 +162,10 @@ suite =
                             , { book = "Joshua", chapter = 7, verse = 5 }
                             , { book = "Joshua", chapter = 7, verse = 6 }
                             , { book = "Joshua", chapter = 7, verse = 7 }
-                            , { book = "Joshua", chapter = 7, verse = 8 }
+                            ]
+                          )
+                        , ( 7
+                          , [ { book = "Joshua", chapter = 7, verse = 8 }
                             , { book = "Joshua", chapter = 7, verse = 9 }
                             , { book = "Joshua", chapter = 7, verse = 10 }
                             , { book = "Joshua", chapter = 7, verse = 11 }
@@ -173,10 +173,7 @@ suite =
                             , { book = "Joshua", chapter = 7, verse = 13 }
                             , { book = "Joshua", chapter = 7, verse = 14 }
                             , { book = "Joshua", chapter = 7, verse = 15 }
-                            ]
-                          )
-                        , ( 8
-                          , [ { book = "Joshua", chapter = 7, verse = 16 }
+                            , { book = "Joshua", chapter = 7, verse = 16 }
                             , { book = "Joshua", chapter = 7, verse = 17 }
                             , { book = "Joshua", chapter = 7, verse = 18 }
                             , { book = "Joshua", chapter = 7, verse = 19 }
@@ -190,16 +187,16 @@ suite =
                             , { book = "Joshua", chapter = 8, verse = 1 }
                             , { book = "Joshua", chapter = 8, verse = 2 }
                             , { book = "Joshua", chapter = 8, verse = 3 }
-                            , { book = "Joshua", chapter = 8, verse = 4 }
+                            ]
+                          )
+                        , ( 8
+                          , [ { book = "Joshua", chapter = 8, verse = 4 }
                             , { book = "Joshua", chapter = 8, verse = 5 }
                             , { book = "Joshua", chapter = 8, verse = 6 }
                             , { book = "Joshua", chapter = 8, verse = 7 }
                             , { book = "Joshua", chapter = 8, verse = 8 }
                             , { book = "Joshua", chapter = 8, verse = 9 }
-                            ]
-                          )
-                        , ( 9
-                          , [ { book = "Joshua", chapter = 8, verse = 10 }
+                            , { book = "Joshua", chapter = 8, verse = 10 }
                             , { book = "Joshua", chapter = 8, verse = 11 }
                             , { book = "Joshua", chapter = 8, verse = 12 }
                             , { book = "Joshua", chapter = 8, verse = 13 }
@@ -215,14 +212,14 @@ suite =
                             , { book = "Joshua", chapter = 8, verse = 23 }
                             , { book = "Joshua", chapter = 8, verse = 24 }
                             , { book = "Joshua", chapter = 8, verse = 25 }
-                            , { book = "Joshua", chapter = 8, verse = 26 }
+                            ]
+                          )
+                        , ( 9
+                          , [ { book = "Joshua", chapter = 8, verse = 26 }
                             , { book = "Joshua", chapter = 8, verse = 27 }
                             , { book = "Joshua", chapter = 8, verse = 28 }
                             , { book = "Joshua", chapter = 8, verse = 29 }
-                            ]
-                          )
-                        , ( 10
-                          , [ { book = "Joshua", chapter = 8, verse = 30 }
+                            , { book = "Joshua", chapter = 8, verse = 30 }
                             , { book = "Joshua", chapter = 8, verse = 31 }
                             , { book = "Joshua", chapter = 8, verse = 32 }
                             , { book = "Joshua", chapter = 8, verse = 33 }
@@ -240,12 +237,12 @@ suite =
                             , { book = "Joshua", chapter = 9, verse = 10 }
                             , { book = "Joshua", chapter = 9, verse = 11 }
                             , { book = "Joshua", chapter = 9, verse = 12 }
-                            , { book = "Joshua", chapter = 9, verse = 13 }
-                            , { book = "Joshua", chapter = 9, verse = 14 }
                             ]
                           )
-                        , ( 11
-                          , [ { book = "Joshua", chapter = 9, verse = 15 }
+                        , ( 10
+                          , [ { book = "Joshua", chapter = 9, verse = 13 }
+                            , { book = "Joshua", chapter = 9, verse = 14 }
+                            , { book = "Joshua", chapter = 9, verse = 15 }
                             , { book = "Joshua", chapter = 9, verse = 16 }
                             , { book = "Joshua", chapter = 9, verse = 17 }
                             , { book = "Joshua", chapter = 9, verse = 18 }
@@ -267,7 +264,7 @@ suite =
                             , { book = "Joshua", chapter = 10, verse = 7 }
                             ]
                           )
-                        , ( 12
+                        , ( 11
                           , [ { book = "Joshua", chapter = 10, verse = 8 }
                             , { book = "Joshua", chapter = 10, verse = 9 }
                             , { book = "Joshua", chapter = 10, verse = 10 }
@@ -290,7 +287,7 @@ suite =
                             , { book = "Joshua", chapter = 10, verse = 27 }
                             ]
                           )
-                        , ( 13
+                        , ( 12
                           , [ { book = "Joshua", chapter = 10, verse = 28 }
                             , { book = "Joshua", chapter = 10, verse = 29 }
                             , { book = "Joshua", chapter = 10, verse = 30 }

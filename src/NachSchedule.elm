@@ -2,6 +2,8 @@ module NachSchedule exposing (Line, makeSchedule, psInRange)
 
 import List
 import List.Extra
+import Sefaria exposing (Response(..))
+import Task
 
 
 type alias Book =
@@ -59,17 +61,44 @@ psInRange s e =
         |> List.map pToLines
 
 
-allLines : List Line
+
+{- All lines in the study program -}
+
+
+allLines : List Book -> List Line
 allLines =
-    Debug.todo "Get all lines in schedule"
+    List.map
+        (Sefaria.getBook
+            >> Task.sequence
+            >> Cmd.map
+                (\res ->
+                    case res of
+                        GotChapter rchapter ->
+                            Result.map
+                                (\chapter ->
+                                    List.range 1 chapter.length
+                                        |> List.map
+                                            (\v ->
+                                                { book = chapter.book
+                                                , chapter = chapter.number
+                                                , verse = v
+                                                }
+                                            )
+                                )
+                                rchapter
+                )
+        )
 
 
-makeSchedule : Date -> Date -> List ( Date, List Line )
-makeSchedule start end =
+makeSchedule : Date -> Date -> List Book -> List ( Date, List Line )
+makeSchedule start end books =
     let
         -- range of days
         days =
             rangeOfDays start end
+
+        lines =
+            allLines books
 
         {- determine how many lines should be stufied in a day
 
@@ -78,14 +107,14 @@ makeSchedule start end =
            out that this isn't always the case, we'll have to refactor.
         -}
         linesPerDay =
-            List.length days // List.length allLines
+            List.length allLines // List.length days
 
         linesPerDayMod =
-            modBy (List.length days) (List.length allLines)
+            modBy (List.length allLines) (List.length days)
 
         {- get lines in that range referenced by the base study program -}
-        references =
-            List.map pToLines days
-                |> List.Extra.uniqueBy Tuple.second
+        -- references =
+        --     List.map pToLines days
+        --         |> List.Extra.uniqueBy Tuple.second
     in
     references
